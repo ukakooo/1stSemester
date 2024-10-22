@@ -18,7 +18,7 @@ public class Extra2 {
             }
             System.out.println();
         }
-        for (int i = num; i >= 1; i--) { // Loop process for the bottom half of the diamond
+        for (int i = num - 1; i >= 1; i--) { // Loop process for the bottom half of the diamond
             for (int j = num; j > i; j--) { // Printing the spaces to make the triangle symmetrical
                 System.out.print(" ");
             }
