@@ -59,7 +59,7 @@ public class BankSystem16 {
                                                       // message and increase the failed attempts count
                         System.out.println("Error: Please input a valid input");
                         failedAttempts++;
-                    } else { // If the user inputs an invalid input, prompt an error message and increase the failed attempts count
+                    } else { // If the user inputs an invalid input, prompt an error message and increase thefailed attempts count
                         System.out.println("Error: Please input a valid input");
                         failedAttempts++;
                     }
@@ -79,8 +79,7 @@ public class BankSystem16 {
                     break;
             }
             if (failedAttempts >= 3) { // If there are 3 failed attempts, prints that the user's account is locked for security reasons
-                System.out.println(
-                        "Too many invalid attempts. Your account has been temporarily locked for security reasons.");
+                System.out.println("Too many invalid attempts. Your account has been temporarily locked for security reasons.");
                 isRunning = false; // Set the isRunning variable to false to make the program terminated
             } else {
 
