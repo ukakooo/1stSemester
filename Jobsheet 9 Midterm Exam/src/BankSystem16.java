@@ -55,8 +55,7 @@ public class BankSystem16 {
                             failedAttempts++;
                         }
 
-                    } else if (withdrawAmount <= 0) { // If the user inputs equals or less than $0, prompt an error
-                                                      // message and increase the failed attempts count
+                    } else if (withdrawAmount <= 0) { // If the user inputs equals or less than $0, prompt an error message and increase the failed attempts count
                         System.out.println("Error: Please input a valid input");
                         failedAttempts++;
                     } else { // If the user inputs an invalid input, prompt an error message and increase thefailed attempts count
