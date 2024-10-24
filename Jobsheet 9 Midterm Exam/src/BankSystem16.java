@@ -31,8 +31,8 @@ public class BankSystem16 {
                         balance += depositAmount;
                         System.out.println("Deposit successful! Your new balance is $" + balance);
                         System.out.println();
-                    } else { // If the deposit amount input is invalid, prompt an error message and increase the failed attempts count
-                        System.out.println("Error: Please input a valid balance input.");
+                    } else { // If the deposit amount input is $0 or less, prompt an error message and increase the failed attempts count
+                        System.out.println("Error: Balance amount must be greater than $0");
                         failedAttempts++;
                         System.out.println(); // To print a blank row
                     }
