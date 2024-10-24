@@ -40,27 +40,19 @@ public class BankSystem16 {
                 case 2: // If the user gives 2 as an input
                     System.out.print("Enter amount to withdraw: "); // Giving the user an option on how many amounts the user wants to withdraw from the balance
                     withdrawAmount = input.nextDouble();
-                    if (withdrawAmount > balance) { // If the withdraw amount is over the balance amount, let the user know that the user has insufficient balance and increase the failed attempts count
-                        System.out.println("Error: Insufficient balance. Transaction denied.");
-                        failedAttempts++;
-                    } else if (withdrawAmount <= balance || withdrawAmount > 0) { // If the withdraw amount is less than balance amount and more than 0
-                        if (withdrawAmount < 500 || withdrawAmount < 0) { // Let the user know that the withdraw process is successful and decrease the current balance by the withdraw amount
-                            balance -= withdrawAmount;
-                            System.out.println("Withdrawal successful! Your new balance is $" + balance);
-                        } else if (withdrawAmount >= 500) { // Let the user know that the user can't withdraw more than $500 at once and increase the failed attempts count
-                            System.out.println("Error: You cannot withdraw more than $500 at once");
-                            failedAttempts++;
-                        } else { // If the user inputs an invalid input, prompt an error message and increase the failed attempts count
-                            System.out.println("Error: Invalid input");
-                            failedAttempts++;
-                        }
 
-                    } else if (withdrawAmount <= 0) { // If the user inputs equals or less than $0, prompt an error message and increase the failed attempts count
-                        System.out.println("Error: Please input a valid input");
+                    if (withdrawAmount > balance) { // If the withdraw amount is over the balance amount, let the user know that the user has insufficient balance and increase the failed attempts count
+                        System.out.println("Error: Insufficient balance. Transaction denied");
                         failedAttempts++;
-                    } else { // If the user inputs an invalid input, prompt an error message and increase thefailed attempts count
-                        System.out.println("Error: Please input a valid input");
+                    } else if (withdrawAmount <= 0) { // If the withdraw amount is 0 or less, prompt an error message that the withdrawal amount must be greater than $0
+                        System.out.println("Error: Withdrawal amount must be greater than $0");
                         failedAttempts++;
+                    } else if (withdrawAmount > 500) { // If withdrawal is greater than $500, prompt an error message that the user can't withdraw more than $500 at once
+                        System.out.println("Error: You cannot withdraw more than $500 at once");
+                        failedAttempts++;
+                    } else { // If the user inputs a valid withdrawal, let the user know that the withdraw process is successful and decrease the current balance by the withdraw amount
+                        balance -= withdrawAmount;
+                        System.out.println("Withdrawal successful! Your new balance is $" + balance);
                     }
                     System.out.println(); // To print a blank row
                     break;
@@ -69,10 +61,11 @@ public class BankSystem16 {
                     System.out.println(); // To print a blank row
                     break;
                 case 4: // If the user inputs 4, terminate the program
-                    System.out.println("See you next time! Your final balance is $ "+balance+"!");
+                    System.out.println("See you next time! Your final balance is $ " + balance + "!");
                     isRunning = false; // Set the isRunning to false to make the program terminated
                     break;
-                default: // If the user inputs an invalid input, print an error message and increase the failed attempts count
+                default: // If the user inputs an invalid input, print an error message and increase the
+                         // failed attempts count
                     System.out.println("Error: Please input a valid input");
                     failedAttempts++;
                     System.out.println(); // Print a blank row
