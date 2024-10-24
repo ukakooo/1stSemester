@@ -4,8 +4,7 @@ public class BankSystem16 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        double balance, withdrawAmount, depositAmount; // declare variables for balances, withdraw amount and deposit
-                                                       // amount
+        double balance, withdrawAmount, depositAmount; // declare variables for balances, withdraw amount and deposit amount
         int choice; // declare variable for choices
         int failedAttempts = 0; // declare variable and input for failed attempts
         boolean isRunning = true; // declare variable and input about whether the program is running or not
@@ -26,8 +25,7 @@ public class BankSystem16 {
 
             switch (choice) {
                 case 1: // if the user gives 1 as an input
-                    System.out.print("Enter amount to deposit: "); // Giving the user an option on how many amounts the
-                                                                   // user wants to deposit to the balance
+                    System.out.print("Enter amount to deposit: "); // Giving the user an option on how many amounts the user wants to deposit to the balance
                     depositAmount = input.nextDouble();
                     if (depositAmount > 0) { // If the deposit amount it more than 0, let the user know that the deposit is successful and add the deposit amount to the current balance
                         balance += depositAmount;
@@ -73,10 +71,8 @@ public class BankSystem16 {
                     System.out.println(); // Print a blank row
                     break;
             }
-            if (failedAttempts >= 3) { // If there are 3 failed attempts, prints that the user's account is locked for
-                                       // security reasons
-                System.out.println(
-                        "Too many invalid attempts. Your account has been temporarily locked for security reasons.");
+            if (failedAttempts >= 3) { // If there are 3 failed attempts, prints that the user's account is locked for security reasons
+                System.out.println("Too many invalid attempts. Your account has been temporarily locked for security reasons.");
                 isRunning = false; // Set the isRunning variable to false to make the program terminated
             } else {
 
