@@ -1,3 +1,7 @@
+Jobsheet 10
+--------------------------------------------------------
+This jobsheet is about arrays and such. Maybe there will be more so who knows because I still don't know if there is more, to be honest.
+
 Jobsheet 9
 --------------------------------------------------------
 This jobsheet is for my mid-term exam.
