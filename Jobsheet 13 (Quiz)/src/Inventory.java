@@ -16,125 +16,38 @@ public class Inventory {
 			System.out.print("\nEnter the index of the item to manage (0-4, or 99 to exit): ");
 			choice = sigmaSkibidi.nextInt();
 
-			switch (choice) {
-				case 0:
-					System.out.println("Selected item: " + items[0]);
+			if (choice >= 0 && choice < 5) {
+					System.out.println("Selected item: " + items[choice]);
 					System.out.print("Enter action (1: Add Stock, 2: Remove Stock): ");
 					innerChoice = sigmaSkibidi.nextInt();
 					switch (innerChoice) {
 						case 1:
 							System.out.print("Enter Quantity: ");
 							stockOption = sigmaSkibidi.nextInt();
-							itemQuantity[0] += stockOption;
+							itemQuantity[choice] += stockOption;
 							System.out.println("Stock added successfully.");
 							break;
 						case 2:
 							System.out.print("Enter Quantity: ");
 							stockOption = sigmaSkibidi.nextInt();
-							itemQuantity[0] -= stockOption;
+							itemQuantity[choice] -= stockOption;
 							System.out.println("Stock removed successfully.");
 							break;
 						default:
 							System.out.println("Please input a valid option.");
 							break;
 					}
-					break;
-				case 1:
-					System.out.println("Selected item: " + items[1]);
-					System.out.print("Enter action (1: Add Stock, 2: Remove Stock): ");
-					innerChoice = sigmaSkibidi.nextInt();
-					switch (innerChoice) {
-						case 1:
-							System.out.print("Enter Quantity: ");
-							stockOption = sigmaSkibidi.nextInt();
-							itemQuantity[1] += stockOption;
-							System.out.println("Stock added successfully.");
-							break;
-						case 2:
-							System.out.print("Enter Quantity: ");
-							stockOption = sigmaSkibidi.nextInt();
-							itemQuantity[1] -= stockOption;
-							System.out.println("Stock removed successfully.");
-							break;
-						default:
-							System.out.println("Please input a valid option.");
-							break;
-					}
-					break;
-				case 2:
-					System.out.println("Selected item: " + items[2]);
-					System.out.print("Enter action (1: Add Stock, 2: Remove Stock): ");
-					innerChoice = sigmaSkibidi.nextInt();
-					switch (innerChoice) {
-						case 1:
-							System.out.print("Enter Quantity: ");
-							stockOption = sigmaSkibidi.nextInt();
-							itemQuantity[2] += stockOption;
-							System.out.println("Stock added successfully.");
-							break;
-						case 2:
-							System.out.print("Enter Quantity: ");
-							stockOption = sigmaSkibidi.nextInt();
-							itemQuantity[2] -= stockOption;
-							System.out.println("Stock removed successfully.");
-							break;
-						default:
-							System.out.println("Please input a valid option.");
-							break;
-					}
-					break;
-				case 3:
-					System.out.println("Selected item: " + items[3]);
-					System.out.print("Enter action (1: Add Stock, 2: Remove Stock): ");
-					innerChoice = sigmaSkibidi.nextInt();
-					switch (innerChoice) {
-						case 1:
-							System.out.print("Enter Quantity: ");
-							stockOption = sigmaSkibidi.nextInt();
-							itemQuantity[3] += stockOption;
-							System.out.println("Stock added successfully.");
-							break;
-						case 2:
-							System.out.print("Enter Quantity: ");
-							stockOption = sigmaSkibidi.nextInt();
-							itemQuantity[3] -= stockOption;
-							System.out.println("Stock removed successfully.");
-							break;
-						default:
-							System.out.println("Please input a valid option.");
-							break;
-					}
-					break;
-				case 4:
-					System.out.println("Selected item: " + items[4]);
-					System.out.print("Enter action (1: Add Stock, 2: Remove Stock): ");
-					innerChoice = sigmaSkibidi.nextInt();
-					switch (innerChoice) {
-						case 1:
-							System.out.print("Enter Quantity: ");
-							stockOption = sigmaSkibidi.nextInt();
-							itemQuantity[4] += stockOption;
-							System.out.println("Stock added successfully.");
-							break;
-						case 2:
-							System.out.print("Enter Quantity: ");
-							stockOption = sigmaSkibidi.nextInt();
-							itemQuantity[4] -= stockOption;
-							System.out.println("Stock removed successfully.");
-							break;
-						default:
-							System.out.println("Please input a valid option.");
-							break;
-					}
-					break;
-				case 99:
+				}
+				
+				else if (choice == 99) {
 					System.out.println("Program Terminated!");
 					return;
-				default:
+				}
+				else {
 					System.out.println("Invalid index. Try again.");
-					break;
+					continue;
+				}
 			}
 		}
 
 	}
-}
