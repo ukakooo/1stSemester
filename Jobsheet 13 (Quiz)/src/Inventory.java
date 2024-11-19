@@ -30,9 +30,14 @@ public class Inventory {
 						case 2: //If the user wants to remove a stock to the selected inventory
 							System.out.print("Enter Quantity: ");
 							stockOption = sigmaSkibidi.nextInt();
-							itemQuantity[choice] -= stockOption;
-							System.out.println("Stock removed successfully.");
-							break;
+							if (stockOption > itemQuantity[choice]) {
+								System.out.println("Not enough stock to remove.");
+								break;
+							} else {
+								itemQuantity[choice] -= stockOption;
+								System.out.println("Stock removed successfully.");
+								break;
+							}
 						default:
 							System.out.println("Please input a valid option.");
 							break;
