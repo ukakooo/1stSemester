@@ -13,21 +13,21 @@ public class Inventory {
 			for (int i = 0; i < items.length; i++) { // A command that loops to display the inventory's contents
 				System.out.println(i + ". " + items[i] + ": " + itemQuantity[i]);
 			}
-			System.out.print("\nEnter the index of the item to manage (0-4, or 99 to exit): ");
+			System.out.print("\nEnter the index of the item to manage (0-4, or 99 to exit): "); //Prompts the user to input an index to choose
 			choice = sigmaSkibidi.nextInt();
 
-			if (choice >= 0 && choice < 5) {
+			if (choice >= 0 && choice < 5) { //A condition if the user inputs a valid integer based on the menu
 					System.out.println("Selected item: " + items[choice]);
-					System.out.print("Enter action (1: Add Stock, 2: Remove Stock): ");
+					System.out.print("Enter action (1: Add Stock, 2: Remove Stock): "); //Prompts the user whether the user wants to add a stock or remove the stock
 					innerChoice = sigmaSkibidi.nextInt();
 					switch (innerChoice) {
-						case 1:
+						case 1: //If the user wants to add a stock to the selected inventory
 							System.out.print("Enter Quantity: ");
 							stockOption = sigmaSkibidi.nextInt();
 							itemQuantity[choice] += stockOption;
 							System.out.println("Stock added successfully.");
 							break;
-						case 2:
+						case 2: //If the user wants to remove a stock to the selected inventory
 							System.out.print("Enter Quantity: ");
 							stockOption = sigmaSkibidi.nextInt();
 							itemQuantity[choice] -= stockOption;
@@ -39,11 +39,11 @@ public class Inventory {
 					}
 				}
 				
-				else if (choice == 99) {
+				else if (choice == 99) { //If the user inputs 99 as an index, terminate the program
 					System.out.println("Program Terminated!");
 					return;
 				}
-				else {
+				else { //If the user inputs an invalid input
 					System.out.println("Invalid index. Try again.");
 					continue;
 				}
