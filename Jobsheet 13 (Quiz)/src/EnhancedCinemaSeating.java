@@ -59,7 +59,7 @@ public class EnhancedCinemaSeating {
                             audience[row][column] = 1; // Mark the seat as occupied.
                             bookedSeats++; // Increase the Booked Seats count
 
-                            //Extra if-else operator to check the category seats
+                            // Extra if-else operator to check the category seats
                             if (row <= 1) {
                                 seatPrice = vipPrice; // Row 0 and 1 are VIP
                             } else if (row <= 3) {
@@ -67,7 +67,7 @@ public class EnhancedCinemaSeating {
                             } else {
                                 seatPrice = economyPrice; // Row 4 is Economy
                             }
-                            earnings += seatPrice; //Increase the earning value
+                            earnings += seatPrice; // Increase the earning value
                             System.out.println("Seat successfully booked. Price: $" + seatPrice);
                         } else { // A condition where the seat is occupied.
                             System.out.println("Seat already booked. Please choose a different seat.");
@@ -89,7 +89,7 @@ public class EnhancedCinemaSeating {
                             audience[row][column] = 0; // Mark the seat as not occupied
                             bookedSeats--; // Decrease the booked seats count
 
-                            //Extra if-else operator to check the category seats
+                            // Extra if-else operator to check the category seats
                             if (row <= 1) {
                                 seatPrice = vipPrice; // Row 0 and 1 are VIP
                             } else if (row <= 3) {
@@ -97,7 +97,7 @@ public class EnhancedCinemaSeating {
                             } else {
                                 seatPrice = economyPrice; // Row 4 is Economy
                             }
-                            earnings -= seatPrice; //Decrease the earning value
+                            earnings -= seatPrice; // Decrease the earning value
                             System.out.println("Booking successfully cancelled. ");
                         } else {
                             System.out.println("Seat is not booked. Nothing to cancel.");
