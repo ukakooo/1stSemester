@@ -69,6 +69,8 @@ public class CinemaWithScanner16 {
                 case 3:
                     System.out.println("Exiting the program..."); // Displays a sentence that the program is exiting
                     return;
+				default:
+					System.out.println("Please input the valid choice!");
             }
         }
     }
