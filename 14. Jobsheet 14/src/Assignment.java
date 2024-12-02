@@ -6,6 +6,7 @@ public class Assignment {
     public static void main(String[] args) {
         Scanner sigmaSkibidi = new Scanner(System.in);
         while (true) {
+            //Prints the menus
             System.out.println("\nMenu:");
             System.out.println("1. Input Grades");
             System.out.println("2. Display Grades");
@@ -44,10 +45,11 @@ public class Assignment {
         }
     }
 
-    public static void inputGrades() {
+    public static void inputGrades() { //Function to input grades
         Scanner gradesScanner = new Scanner(System.in);
         System.out.println("Enter the grades for each student.");
 
+        // Loops the process of inputting the students's grades
         for (int i = 0; i < students.length; i++) {
             System.out.println("Enter the grade for student " + students[i]);
             for (int j = 0; j < grades[i].length; j++) {
@@ -57,17 +59,19 @@ public class Assignment {
         }
     }
 
-    public static void displayGrades() {
+    public static void displayGrades() { //A function to display the students's grades
+        //Loop the process to display the heading of the table like Students and The weeks
         System.out.print("Student ");
             for (int i = 0; i < grades[1].length; i++) {
                 System.out.print("Week  " + (i + 1) + "\t");
             }
             System.out.println();
 
+            //Loops the process to input each students's grades
             for (int i = 0; i < students.length; i++) {
-                System.out.print(students[i] + "\t");
-                for (int j = 0; j < grades[i].length; j++) {
-                    System.out.print(grades[i][j] + "\t");
+                System.out.print(students[i] + "\t"); //Prints the students's name
+                for (int j = 0; j < grades[i].length; j++) { 
+                    System.out.print(grades[i][j] + "\t"); //Prints the students's grades
                 }
                 System.out.println();
             }
