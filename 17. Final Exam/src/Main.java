@@ -62,7 +62,7 @@ public class Main {
 
         if (isAvailable[borrowChoice - 1] == false && borrowChoice < titles.length) {
             System.out.println("The book is currently borrowed, please choose another book.");
-        } else if (isAvailable[borrowChoice - 1] == true && borrowChoice < titles.length) {
+        } else if (isAvailable[borrowChoice - 1] == true && borrowChoice <= titles.length) {
             System.out.println("Book titled " + titles[borrowChoice - 1] + " with the ISBN " + isbn[borrowChoice - 1]
                     + " borrowed successfully! Please return it on time.");
             isAvailable[borrowChoice - 1] = false;
@@ -80,7 +80,7 @@ public class Main {
                     "Book titled " + titles[returnChoice - 1] + " with the ISBN " + isbn[returnChoice - 1]
                             + " returned successfully! Thank you!");
             isAvailable[returnChoice - 1] = true;
-        } else if (isAvailable[returnChoice - 1] == true && returnChoice < titles.length) {
+        } else if (isAvailable[returnChoice - 1] == true && returnChoice <= titles.length) {
             System.out.println("You have not borrowed this book yet.");
         } else {
             System.out.println("Invalid input, please input the correct value.");
